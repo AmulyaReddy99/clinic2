@@ -1,5 +1,4 @@
-.sidebar p{
-    cursor: pointer;
+.sidebar a{
     padding-left: 30px;
 }
 .sidebar{

@@ -17,9 +17,9 @@ class CustomSidebar extends React.Component{
           <Sidebar
             sidebar={
                 <div className="sidebar">
-                    <p>Details</p>
-                    <p>Stats</p>
-                    <p>Messages</p>
+                    <a href='/details'>Details</a><br></br>
+                    <a href='/stats'>Stats</a><br></br>
+                    <a href='/msgs'>Messages</a><br></br>
                 </div>
             }
             open={this.state.sidebarOpen}
@@ -27,13 +27,13 @@ class CustomSidebar extends React.Component{
             styles={{   
                 sidebar:{ 
                     background: "white", 
-                    width:"100%",  
+                    width:"90%",  
                     display: 'flex'
                 },
             }}
           >
             <button onClick={() => this.onSetSidebarOpen(true)}>
-              Open sidebar
+              Open
             </button>
           </Sidebar>
         );
