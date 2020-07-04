@@ -5,3 +5,7 @@
 .sidebar{
     padding: 20px;
 }
+.list{
+    width: 100%;
+    cursor: pointer;
+}

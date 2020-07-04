@@ -8,8 +8,17 @@ import React from 'react';
 //     }
 // }
 
-const Messages = props => {
-    return <li>{props.name}</li>
+const Members = props => {
+    return <p className="list">{props.name}</p>
 };
 
-export default Messages;
+const Messages = props => {
+    return (
+        <p></p>
+    );
+}
+
+export{
+    Members,
+    Messages
+};

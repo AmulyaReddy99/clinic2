@@ -3,16 +3,22 @@ import './App.css';
 
 import { Navbar } from './components/Navbar';
 import CustomSidebar from './components/CustomSidebar';
-import Messages from './components/Messages';
+import { Messages, Members } from './components/Messages';
 
 class App extends Component {
 
   constructor(props){
     super(props);
     this.objs = [];
-    this.names = ['Rachana','Pranav','Taruni','Katy','Chanakya'];
-    for(var i=0; i<this.names.length; i++) {
-      this.objs.push(<Messages name={this.names[i]} key={i}></Messages>);
+    this.names = {
+      'C1': ['Hello.. Hw r ya?????? how r u doing.. hw is it in bangalore.. so long..!','cool','fine','how about hitachi?'],
+      'C2': ['I am fine..','cool','hw is jpmc','good'],
+      'C3': ['Happy birthday bro!'],
+      'C4': ['Ok'],
+      'C5': ['Met charan yesterday','nice']
+    };
+    for(var key in this.names) {
+      this.objs.push(<Members name={key} key={key}></Members>);
     }
   }
 
@@ -22,11 +28,17 @@ class App extends Component {
         <Navbar></Navbar>
         <div className="row">
           <div className="col-sm-3">
-            <CustomSidebar class="cs"></CustomSidebar>
+            <CustomSidebar></CustomSidebar>
           </div>
           <div className="col-sm-9" style={{minHeight: '100vh'}}>
-            Main Page
-            {this.objs}
+            <div className="row">
+              <div className="col-sm-3" >
+                {this.objs}
+              </div>
+              <div className="col-sm-9">  
+                {/* {this.Messages} */}
+              </div>
+            </div>
           </div>
         </div>
       </div>
