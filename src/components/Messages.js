@@ -16,11 +16,22 @@ class Messages extends React.Component{
         for(var key in this.names) {
             this.objs.push(<Members name={key} key={key} parentCallback={this.callback}></Members>);
         }
+        this.getDataAPI();
     }
 
     callback = (current_member) => {
         console.log("Parent",current_member);
         this.setState({current_member: current_member})
+    }
+
+    // async getDataAPI(){
+    getDataAPI(){   
+        // const resp = await fetch('https://opentdb.com/api.php?amount=10');
+        // const data = await resp.json();
+        fetch('https://opentdb.com/api.php?amount=10')
+            .then((resp) => resp.json())
+            .then((data) => console.log(data))
+            .catch((error) => console.log(error));
     }
 
     render(){
@@ -50,8 +61,7 @@ class Members extends React.Component {
         console.log(name);
         this.setState({
           current_member: name
-        });
-        this.props.parentCallback(name);
+        },() => this.props.parentCallback(this.state.current_member));
     }
 
     render(){
