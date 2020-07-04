@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Messages extends React.Component{
 
@@ -17,6 +18,7 @@ class Messages extends React.Component{
             this.objs.push(<Members name={key} key={key} parentCallback={this.callback}></Members>);
         }
         this.getDataAPI();
+        this.axiosGetData();
     }
 
     callback = (current_member) => {
@@ -32,6 +34,16 @@ class Messages extends React.Component{
             .then((resp) => resp.json())
             .then((data) => console.log(data))
             .catch((error) => console.log(error));
+    }
+
+    axiosGetData(){
+        axios.get('https://opentdb.com/api.php?amount=10')
+            .then(resp => {console.log(resp)})
+            .catch(error => {console.log(error)});
+
+        axios.post('https://opentdb.com/api.php?amount=10',this.state)
+            .then(resp => {console.log(resp)})
+            .catch(error => {console.log('ERROR',error)});
     }
 
     render(){
