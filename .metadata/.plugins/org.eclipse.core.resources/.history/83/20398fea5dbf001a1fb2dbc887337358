@@ -1,0 +1,60 @@
+package com.example.demo.controller;
+
+
+public class Details {
+	
+	private String clinic_name;
+	private String type;
+	private String status;
+	
+	public Details() {
+		
+	}
+	
+
+	public Details(String clinic_name, String type, String status, String ph_no, String address) {
+		super();
+		this.clinic_name = clinic_name;
+		this.type = type;
+		this.status = status;
+		this.ph_no = ph_no;
+		this.address = address;
+	}
+	
+	
+	public String getClinic_name() {
+		return clinic_name;
+	}
+	public void setClinic_name(String clinic_name) {
+		this.clinic_name = clinic_name;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getPh_no() {
+		return ph_no;
+	}
+	public void setPh_no(String ph_no) {
+		this.ph_no = ph_no;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	private String ph_no;
+	private String address;
+	
+	
+	
+}

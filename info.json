@@ -1,0 +1,78 @@
+{	
+	"1 km":[
+		{
+			"clinic name":"c1",
+			"type":"general",
+			"status":"open",
+			"ph no":"999999",
+			"address":"abc building, abc colony"
+		},
+		{
+			"clinic name":"c2",
+			"type":"general",
+			"status":"closed",
+			"ph no":"999998",
+			"address":"abc building, abc colony"
+		},
+		{
+			"clinic name":"c3",
+			"type":"general",
+			"status":"open",
+			"ph no":"999997",
+			"address":"abc building, abc colony"
+		}
+	],
+	"2 km":[
+		{
+			"clinic name":"c4",
+			"type":"general",
+			"status":"open",
+			"ph no":"999999",
+			"address":"abc building, abc colony"
+		},
+		{
+			"clinic name":"c5",
+			"type":"children",
+			"status":"open",
+			"ph no":"999999",
+			"address":"abc building, abc colony"
+		},
+		{
+			"clinic name":"c6",
+			"type":"children",
+			"status":"open",
+			"ph no":"999999",
+			"address":"abc building, abc colony"
+		},
+		{
+			"clinic name":"c7",
+			"type":"general",
+			"status":"open",
+			"ph no":"999999",
+			"address":"abc building, abc colony"
+		}
+	],
+	"5 km":[
+		{
+			"clinic name":"c8",
+			"type":"general",
+			"status":"open",
+			"ph no":"999999",
+			"address":"abc building, abc colony"
+		},
+		{
+			"clinic name":"c9",
+			"type":"children",
+			"status":"open",
+			"ph no":"999999",
+			"address":"abc building, abc colony"
+		},
+		{
+			"clinic name":"c10",
+			"type":"general",
+			"status":"open",
+			"ph no":"999999",
+			"address":"abc building, abc colony"
+		}
+	]
+}

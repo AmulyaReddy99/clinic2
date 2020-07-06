@@ -1,0 +1,40 @@
+package com.example.demo.service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.controller.Details;
+import com.example.demo.repository.DetailsRepository;
+
+@Service
+public class DetailsService {
+	
+	@Autowired
+	DetailsRepository detailsRepository;
+	
+	List<Details> details = Arrays.asList(
+				new Details("c1","general","open","9999","abc building, abc colony"),
+				new Details("c2","children","open","9998","abc building, abc colony"),
+				new Details("c3","general","open","9997","abc building, abc colony"),
+				new Details("c4","general","closed","9996","abc building, abc colony")
+			);
+	
+	public List<Details> getAllDetails(){
+		
+		List<Details> details = new ArrayList<>();
+		detailsRepository.findAll()
+		.forEach(details::add);
+		return details;
+		
+	}
+	
+	public void addDetail(Details detail) {
+		System.out.printf("------------------>",detail);
+		detailsRepository.save(detail);
+	} 
+	
+}
