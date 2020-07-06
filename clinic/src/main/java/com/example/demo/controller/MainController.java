@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.repository.MongoExampleRepository;
 import com.example.demo.service.DetailsService;
 
 @RestController
@@ -17,6 +18,21 @@ public class MainController {
 	
 	@Autowired
 	private DetailsService detailsService;
+	
+	@Autowired
+	private MongoExampleRepository mongoRepo;
+	
+	@RequestMapping("/insert")
+	public String insert() {
+		mongoRepo.save(new MongoExample("success","insert"));
+		return "Successful";
+	}
+	
+	@RequestMapping("/fetch")
+	public List<MongoExample> fetch() {
+		return mongoRepo.findAll();
+	}
+	
 	
 	@RequestMapping("/details")
 	public List<Details> getAllDetails(){

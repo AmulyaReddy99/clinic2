@@ -7,8 +7,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.example.demo.AppConfig;
+
 @Entity
 public class Messages {
+	
+//	ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+//	Details details = applicationContext.getBean(Details.class);
 		
 	@Id
 	@Column(name="message_id")
@@ -19,6 +27,9 @@ public class Messages {
 	private String timestamp;
 	@ManyToOne
 	private Details detail;
+	
+//	@OneToOne - two table columns mapped one on one (Messages - Details)
+//	@JoinColumn(name="id",referencedColumnName="id") - map 'id' column in Messages to 'id' column in Details
 	
 	public Messages() {
 		
