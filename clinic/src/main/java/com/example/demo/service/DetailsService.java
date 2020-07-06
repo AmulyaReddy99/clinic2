@@ -18,10 +18,10 @@ public class DetailsService {
 	DetailsRepository detailsRepository;
 	
 	List<Details> details = Arrays.asList(
-				new Details("c1","general","open","9999","abc building, abc colony"),
-				new Details("c2","children","open","9998","abc building, abc colony"),
-				new Details("c3","general","open","9997","abc building, abc colony"),
-				new Details("c4","general","closed","9996","abc building, abc colony")
+				new Details(1L,"c1","general","open","9999","abc building, abc colony"),
+				new Details(2L,"c2","children","open","9998","abc building, abc colony"),
+				new Details(3L,"c3","general","open","9997","abc building, abc colony"),
+				new Details(4L,"c4","general","closed","9996","abc building, abc colony")
 			);
 	
 	public List<Details> getAllDetails(){

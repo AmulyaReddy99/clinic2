@@ -1,6 +1,9 @@
 package com.example.demo.controller;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -8,7 +11,9 @@ import javax.persistence.ManyToOne;
 public class Messages {
 		
 	@Id
-	private String message_id;
+	@Column(name="message_id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long message_id;
 	private String clinicname;
 	private String person_name;
 	private String timestamp;
@@ -19,19 +24,19 @@ public class Messages {
 		
 	}
 	
-	public Messages(String message_id, String clinicname, String person_name, String timestamp, Details detail) {
+	public Messages(Long message_id, String clinicname, String person_name, String timestamp, Details detail) {
 		super();
 		this.message_id = message_id;
 		this.clinicname = clinicname;
 		this.person_name = person_name;
 		this.timestamp = timestamp;
-		this.detail = new Details(clinicname, "", "", "", "");
+		this.detail = new Details(0L, clinicname, "", "", "", "");
 	}
 	
-	public String getMessage_id() {
+	public Long getMessage__Id() {
 		return message_id;
 	}
-	public void setMessage_id(String message_id) {
+	public void setMessage__Id(Long message_id) {
 		this.message_id = message_id;
 	}
 	public String getclinicName() {
