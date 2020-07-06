@@ -9,7 +9,6 @@ import com.example.demo.controller.Details;
 public interface DetailsRepository extends CrudRepository<Details, String> {
 
 	// custom filters
-	public List<Details> findByClinicname(String clinicname);
 	public List<Details> findByType(String type);
 	public List<Details> findByStatus(String status);
 	public List<Details> findByAddress(String address);

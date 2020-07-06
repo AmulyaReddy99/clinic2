@@ -29,14 +29,14 @@ public class MainController {
 		return "Succesful";
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/details/{clinicName}")
-	public Optional<Details> addDetail(@PathVariable String clinicName) {
-		return detailsService.getDetail(clinicName);
+	@RequestMapping(method=RequestMethod.GET, value="/details/{clinic_name}")
+	public Optional<Details> addDetail(@PathVariable String clinic_name) {
+		return detailsService.getDetail(clinic_name);
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/details/{clinicName}")
-	public String deleteDetail(@PathVariable String clinicname) {
-		detailsService.deleteDetail(clinicname);
+	@RequestMapping(method=RequestMethod.DELETE, value="/details/{clinic_name}")
+	public String deleteDetail(@PathVariable String clinic_name) {
+		detailsService.deleteDetail(clinic_name);
 		return "Succesful";
 	}
 	

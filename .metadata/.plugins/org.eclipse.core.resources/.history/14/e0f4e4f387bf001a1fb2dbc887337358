@@ -35,8 +35,8 @@ public class MainController {
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/details/{clinicName}")
-	public String deleteDetail(@PathVariable String clinicname) {
-		detailsService.deleteDetail(clinicname);
+	public String deleteDetail(@PathVariable String clinicName) {
+		detailsService.deleteDetail(clinicName);
 		return "Succesful";
 	}
 	

@@ -7,7 +7,7 @@ import javax.persistence.Id;
 public class Details {
 	
 	@Id
-	private String clinicname;
+	private String clinicName;
 	private String type;
 	private String status;
 	private String ph_no;
@@ -18,9 +18,9 @@ public class Details {
 	}
 	
 
-	public Details(String clinicname, String type, String status, String ph_no, String address) {
+	public Details(String clinic_name, String type, String status, String ph_no, String address) {
 		super();
-		this.clinicname = clinicname;
+		this.clinic_name = clinic_name;
 		this.type = type;
 		this.status = status;
 		this.ph_no = ph_no;
@@ -28,11 +28,11 @@ public class Details {
 	}
 	
 	
-	public String getclinicName() {
-		return clinicname;
+	public String getClinic_name() {
+		return clinic_name;
 	}
-	public void setclinicName(String clinicname) {
-		this.clinicname = clinicname;
+	public void setClinic_name(String clinic_name) {
+		this.clinic_name = clinic_name;
 	}
 	public String getType() {
 		return type;

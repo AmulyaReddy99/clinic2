@@ -37,12 +37,12 @@ public class DetailsService {
 		detailsRepository.save(detail);
 	} 
 	
-	public Optional<Details> getDetail(String clinic_name) throws IllegalArgumentException {
-		 return detailsRepository.findById(clinic_name);
+	public Optional<Details> getDetail(String clinicname) throws IllegalArgumentException {
+		 return detailsRepository.findById(clinicname);
 	}
 		
-	public void deleteDetail(String clinic_name) {
-		detailsRepository.deleteById(clinic_name);
+	public void deleteDetail(String clinicname) {
+		detailsRepository.deleteById(clinicname);
 	}
 	
 }
