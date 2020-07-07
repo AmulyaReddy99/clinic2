@@ -21,5 +21,5 @@ public class Hello {
 	public String user() {
 		return "User";
 	}
-	
+		
 }
