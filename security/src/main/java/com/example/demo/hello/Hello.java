@@ -1,5 +1,6 @@
 package com.example.demo.hello;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,4 +21,5 @@ public class Hello {
 	public String user() {
 		return "User";
 	}
+	
 }

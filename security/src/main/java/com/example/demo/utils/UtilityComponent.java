@@ -2,6 +2,7 @@ package com.example.demo.utils;
 
 import java.util.List;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -34,9 +35,14 @@ public class UtilityComponent {
 	}
 	
 	@After("allGetters())")
-	public void getUse() {
-		System.out.println("Before anything that starts with use");
+	public void getUse(JoinPoint joinPoint) {
+		System.out.println(joinPoint.getTarget());
 	}
+	
+//	@After("args(name)")
+//	public void stringArgs(String name) {
+//		System.out.println("all string args called with name "+name);
+//	}
 	
 	@Pointcut("execution(public String use*())")
 	public void allGetters() {}
