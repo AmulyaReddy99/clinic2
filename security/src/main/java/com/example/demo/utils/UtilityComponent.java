@@ -28,7 +28,7 @@ public class UtilityComponent {
 		System.out.println("Before anything that starts with use");
 	}
 	
-	@After("allGetters())")
+	@After("allGetters()) && allMethodsInHello()")
 	public void anyUse() {
 		System.out.println("Before anything that starts with use");
 	}
@@ -40,5 +40,9 @@ public class UtilityComponent {
 	
 	@Pointcut("execution(public String use*())")
 	public void allGetters() {}
+	
+	@Pointcut("within(com.example.demo.hello.Hello)")
+	public void allMethodsInHello() {}
+	
 	
 }
