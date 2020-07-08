@@ -44,6 +44,11 @@ public class Hello {
 		return "User";
 	}
 	
+	@RequestMapping("/*")
+	public String error() {
+		return "ERROR";
+	}
+	
 	@RequestMapping(method=RequestMethod.POST,value="/authenticate")
 	public ResponseEntity<?> authenticate(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 		try{

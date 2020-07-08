@@ -7,7 +7,7 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
-import com.example.demo.controller.Details;
+//import com.example.demo.controller.Details;
 
 //Advice -> Where (before, after)
 //PointCut -> What (which function)
@@ -17,9 +17,9 @@ import com.example.demo.controller.Details;
 @EnableAspectJAutoProxy
 public class UtilityComponent {
 
-	@Before("execution(public List<Details> getAllDetails())")
+	@Before("execution(public String insert())")
 	public void log() {
-		System.out.println("Fetching all details");
+		System.out.println("MongoDB insert");
 	}
 
 }
