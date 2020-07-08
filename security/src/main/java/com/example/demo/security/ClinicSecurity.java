@@ -4,6 +4,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -22,6 +23,12 @@ public class ClinicSecurity extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	private MyUserDetailsService myUserDetailsService;
+	
+	@Override
+	@Bean
+	public AuthenticationManager authenticationManagerBean() throws Exception {
+	    return super.authenticationManagerBean();
+	}
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -62,13 +69,20 @@ public class ClinicSecurity extends WebSecurityConfigurerAdapter {
 //		
 //	}
 	
+//	@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//		http.authorizeRequests()
+//			.antMatchers("/admin","static/css","static/js").permitAll()
+//			.antMatchers("/user").hasAnyRole("USER","ADMIN")
+//			.antMatchers("/").hasAnyRole()
+//			.and().formLogin();
+//	}
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
-			.antMatchers("/admin","static/css","static/js").permitAll()
-			.antMatchers("/user").hasAnyRole("USER","ADMIN")
-			.antMatchers("/").hasAnyRole()
-			.and().formLogin();
+		http.csrf().disable()
+			.authorizeRequests().antMatchers("/authenticate").permitAll()
+			.anyRequest().authenticated();
 	}
 	
 	@Bean
