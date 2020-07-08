@@ -8,9 +8,10 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.example.demo.services.MyUserDetailsService;
 
 
 @EnableWebSecurity
@@ -19,6 +20,15 @@ public class ClinicSecurity extends WebSecurityConfigurerAdapter {
 	@Autowired
 	DataSource dataSource;
 	
+	@Autowired
+	private MyUserDetailsService myUserDetailsService;
+	
+	@Override
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		auth.userDetailsService(myUserDetailsService);
+	}
+	
+	/*
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.jdbcAuthentication()
@@ -36,7 +46,7 @@ public class ClinicSecurity extends WebSecurityConfigurerAdapter {
 //						.password("password")
 //						.roles("ADMIN")
 //			);
-	}
+	}*/
 	
 //	@Override
 //	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
